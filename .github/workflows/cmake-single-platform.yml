@@ -37,3 +37,14 @@ jobs:
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
+    # Option A: Uploading a specific binary file
+    - name: Upload Build Directory as Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        path: ${{github.workspace}}/build
+        if-no-files-found: error
+
+
+
+
+
